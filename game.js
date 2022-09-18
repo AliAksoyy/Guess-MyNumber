@@ -29,7 +29,17 @@ document.querySelector(".check-btn").addEventListener("click", () => {
       msg.textContent = "You lost"
       document.querySelector(".score").disabled =true;
       document.querySelector("body").style.background = "red"
+      document.querySelector(".secret-number").textContent =randomNumber
     }
    
   }
+})
+
+document.querySelector(".again-btn").addEventListener("click", () => {
+  document.querySelector(".msg").textContent = "start"
+  document.querySelector(".score").textContent = 10
+  document.querySelector(".check-btn").disabled =false
+  document.querySelector(".secret-number").textContent = "?"
+      document.querySelector("body").style.background = "black";
+  
 })
