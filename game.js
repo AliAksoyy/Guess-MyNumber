@@ -19,9 +19,17 @@ document.querySelector(".check-btn").addEventListener("click", () => {
         document.querySelector(".top-score").textContent = topScore
       }
   }else {
-    score -=1;
-    guessInput>randomNumber ? (msg.textContent ="Decrease")
-    : (msg.textContent = "Inrease")
-    document.querySelector(".score").textContent =score
+ score -= 1;
+    if(score>0) {
+ guessInput > randomNumber
+   ? (msg.textContent = "Decrease")
+   : (msg.textContent = "Inrease");
+ document.querySelector(".score").textContent = score;
+    }else {
+      msg.textContent = "You lost"
+      document.querySelector(".score").disabled =true;
+      document.querySelector("body").style.background = "red"
+    }
+   
   }
 })
